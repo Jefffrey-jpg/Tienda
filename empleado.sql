@@ -41,7 +41,7 @@ INSERT INTO empleado VALUES(11, '67389283A', 'Marta','Herrera', 'Gil', 1);
 INSERT INTO empleado VALUES(12, '41234836R', 'Irene','Salas', 'Flores', NULL);
 INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero', NULL);
 
--- 1.2.2 Base de datos para MySQL
+-- 1.2.2 Base de datos para MySQL (Tarea 3):
 
 -- 1. Lista el primer apellido de todos los empleados.
 		select apellido1 from empleado;
@@ -116,7 +116,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
 -- 36. Lista los nombres, apellidos y nif de los empleados que trabajan en los departamentos 2, 4 o 5.
 		select nombre, apellido1, apellido2, nif from empleado where id_departamento in (2, 4, 5);
 
--- 1.2.6 Consultas resumen
+-- 1.2.6 Consultas resumen (Tarea 4):
 
 -- 1. Calcula la suma del presupuesto de todos los departamentos.
 		select sum(presupuesto) from departamento;
@@ -142,3 +142,4 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
 		select d.nombre, count(e.id) from departamento d left join empleado e on d.id = e.id_departamento group by d.nombre;
 -- 12. Calcula el número de empleados que trabajan en cada unos de los departamentos que tienen un presupuesto mayor a 200000 euros.
 		select d.nombre, count(e.id) from departamento d left join empleado e on d.id = e.id_departamento where d.presupuesto > 200000 group by d.nombre;
+	
